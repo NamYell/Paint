@@ -406,6 +406,46 @@ public class BrushSize {
                 }
             }
 
+            for (int i = -2; i <= 2; i++) {
+                for (int j = -2; j <= 2; j++) {
+                    for (int k = -2; k <= 2; k++) {
+                        if (((i == -2 || i == 2) && (j == -1 || j == 1) && (k == 0)) ||
+                                ((j == -2 || j == 2) && (i == -1 || i == 1) && (k == 0)) ||
+                                ((i == -2 || i == 2) && (k == -1 || k == 1) && (j == 0)) ||
+                                ((k == -2 || k == 2) && (i == -1 || i == 1) && (j == 0)) ||
+                                ((j == -2 || j == 2) && (k == -1 || k == 1) && (i == 0)) ||
+                                ((k == -2 || k == 2) && (j == -1 || j == 1) && (i == 0))) {
+
+                            Location l = new Location(world, locationX + i, locationY + j, locationZ + k);
+
+                            if (l.getBlock().getType().equals(Material.WHITE_CONCRETE) || l.getBlock().getType().equals(Material.RED_CONCRETE) ||
+                                    l.getBlock().getType().equals(Material.ORANGE_CONCRETE) || l.getBlock().getType().equals(Material.YELLOW_CONCRETE) ||
+                                    l.getBlock().getType().equals(Material.LIME_CONCRETE) || l.getBlock().getType().equals(Material.LIGHT_BLUE_CONCRETE) ||
+                                    l.getBlock().getType().equals(Material.BLUE_CONCRETE) || l.getBlock().getType().equals(Material.PURPLE_CONCRETE) ||
+                                    l.getBlock().getType().equals(Material.MAGENTA_CONCRETE) || l.getBlock().getType().equals(Material.LIGHT_GRAY_CONCRETE) ||
+                                    l.getBlock().getType().equals(Material.BLACK_CONCRETE)) {
+
+                                Block block = l.getBlock();
+
+                                if (p.getInventory().getItem(1).getType().equals(Material.CARROT_ON_A_STICK)) {
+
+                                    block.setType(p.getInventory().getItem(0).getType());
+                                    Command.location.add(block.getLocation());
+
+                                } else if (p.getInventory().getItem(1).getType().equals(Material.ARROW)) {
+
+                                    block.setType(Material.WHITE_CONCRETE);
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+
+
         } catch (NullPointerException e) {
             Bukkit.getLogger().log(Level.WARNING, "Something went wrong!");
         }

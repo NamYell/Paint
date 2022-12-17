@@ -64,6 +64,8 @@ public class RightClickEvent implements Listener {
                                                 brushSize.setBrushThree(block, p);
                                             } else if (num.equals(4)) {
                                                 brushSize.setBrushFour(block, p);
+                                            } else if (num.equals(5)) {
+                                                brushSize.setBrushFive(block, p);
                                             }
                                         }
                                     } else {
@@ -119,6 +121,8 @@ public class RightClickEvent implements Listener {
                                             brushSize.setBrushThree(block, p);
                                         } else if (num.equals(4)) {
                                             brushSize.setBrushFour(block, p);
+                                        } else if (num.equals(5)) {
+                                            brushSize.setBrushFive(block, p);
                                         }
                                     }
 
@@ -264,7 +268,7 @@ public class RightClickEvent implements Listener {
                             } else {
 
                                 Integer num = brush.get(p.getUniqueId());
-                                if (num < 10) {
+                                if (num < 5) {
                                     num += 1;
                                     brush.replace(p.getUniqueId(), num);
                                     p.sendMessage(ChatColor.GREEN + "붓 크기를 " + num + "(으)로 설정하였습니다!");
