@@ -60,6 +60,10 @@ public class RightClickEvent implements Listener {
                                                 brushSize.setBrushOne(block, p);
                                             } else if (num.equals(2)) {
                                                 brushSize.setBrushTwo(block, p);
+                                            } else if (num.equals(3)) {
+                                                brushSize.setBrushThree(block, p);
+                                            } else if (num.equals(4)) {
+                                                brushSize.setBrushFour(block, p);
                                             }
                                         }
                                     } else {
@@ -95,7 +99,8 @@ public class RightClickEvent implements Listener {
                                         block.getType().equals(Material.YELLOW_CONCRETE) || block.getType().equals(Material.LIME_CONCRETE) ||
                                         block.getType().equals(Material.LIGHT_BLUE_CONCRETE) || block.getType().equals(Material.BLUE_CONCRETE) ||
                                         block.getType().equals(Material.PURPLE_CONCRETE) || block.getType().equals(Material.MAGENTA_CONCRETE) ||
-                                        block.getType().equals(Material.LIGHT_GRAY_CONCRETE) || block.getType().equals(Material.BLACK_CONCRETE)) {
+                                        block.getType().equals(Material.LIGHT_GRAY_CONCRETE) || block.getType().equals(Material.BLACK_CONCRETE) ||
+                                        block.getType().equals(Material.WHITE_CONCRETE)) {
 
                                     e.setCancelled(true);
 
@@ -110,6 +115,10 @@ public class RightClickEvent implements Listener {
                                             brushSize.setBrushOne(block, p);
                                         } else if (num.equals(2)) {
                                             brushSize.setBrushTwo(block, p);
+                                        } else if (num.equals(3)) {
+                                            brushSize.setBrushThree(block, p);
+                                        } else if (num.equals(4)) {
+                                            brushSize.setBrushFour(block, p);
                                         }
                                     }
 
