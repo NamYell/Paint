@@ -17,7 +17,16 @@ public class BrushSize {
 
         try {
 
-            b.setType(p.getInventory().getItem(0).getType());
+            if (p.getInventory().getItem(1).getType().equals(Material.CARROT_ON_A_STICK)) {
+
+                b.setType(p.getInventory().getItem(0).getType());
+
+            } else if (p.getInventory().getItem(1).getType().equals(Material.ARROW)) {
+
+                b.setType(Material.WHITE_CONCRETE);
+                Command.location.add(b.getLocation());
+
+            }
 
         } catch (NullPointerException e) {
             Bukkit.getLogger().log(Level.WARNING, "Something went wrong!");
@@ -52,8 +61,16 @@ public class BrushSize {
 
                                 Block block = l.getBlock();
 
-                                block.setType(p.getInventory().getItem(0).getType());
-                                Command.location.add(block.getLocation());
+                                if (p.getInventory().getItem(1).getType().equals(Material.CARROT_ON_A_STICK)) {
+
+                                    block.setType(p.getInventory().getItem(0).getType());
+                                    Command.location.add(block.getLocation());
+
+                                } else if (p.getInventory().getItem(1).getType().equals(Material.ARROW)) {
+
+                                    block.setType(Material.WHITE_CONCRETE);
+
+                                }
 
                             }
 
@@ -63,7 +80,15 @@ public class BrushSize {
                 }
             }
 
-            b.setType(p.getInventory().getItem(0).getType());
+            if (p.getInventory().getItem(1).getType().equals(Material.CARROT_ON_A_STICK)) {
+
+                b.setType(p.getInventory().getItem(0).getType());
+
+            } else if (p.getInventory().getItem(1).getType().equals(Material.ARROW)) {
+
+                b.setType(Material.WHITE_CONCRETE);
+
+            }
 
         } catch (NullPointerException e) {
             Bukkit.getLogger().log(Level.WARNING, "Something went wrong!");

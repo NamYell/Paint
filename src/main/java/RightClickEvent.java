@@ -99,7 +99,19 @@ public class RightClickEvent implements Listener {
 
                                     e.setCancelled(true);
 
-                                    block.setType(Material.WHITE_CONCRETE);
+                                    BrushSize brushSize = new BrushSize();
+
+                                    if (!brush.containsKey(p.getUniqueId())) {
+                                        brushSize.setBrushOne(block, p);
+                                    } else {
+                                        Integer num = brush.get(p.getUniqueId());
+
+                                        if (num.equals(1)) {
+                                            brushSize.setBrushOne(block, p);
+                                        } else if (num.equals(2)) {
+                                            brushSize.setBrushTwo(block, p);
+                                        }
+                                    }
 
                                     break;
 
